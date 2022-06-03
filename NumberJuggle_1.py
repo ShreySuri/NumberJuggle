@@ -18,15 +18,17 @@ if user_input == "1":
     total = random.randint(1, max_num)
 
     end_game = ""
+    turn_count = 0
     while end_game != "reveal":
+
         operation = None
         while operation != "add" and operation != "subtract" and operation != "multiply":
-            operation = input(print("Would you like the add, subtract, or multiply? "))
+            operation = input(print("Would you like to add, subtract, or multiply? "))
             operation = operation.lower()
 
         number = 0.5 
         while number % 1 != 0:
-            number = input(print("What number would you like computer to %s? Please enter an integer. " % operation))
+            number = input(print("What number would you like the computer to %s? Please enter an integer. " % operation))
             number = float(number)
         number = int(number)
 
@@ -35,10 +37,10 @@ if user_input == "1":
             print("%sing %s..." % (operation , number))
         elif operation == "subtract":
             total = total - number
-            print("%sing..." % operation)
+            print("%sing %s..." % (operation , number))
         elif operation == "multiply":
             total = total * number
-            print("%sing..." % operation)
+            print("%sing %s..." % (operation , number))
         else:
             print("Something went wrong. ")
 
@@ -47,5 +49,15 @@ if user_input == "1":
         print("If you would like the number to be revealed, type 'reveal'.")
         end_game = input(print("If you would like to continue, type anything else. "))
         end_game = end_game.lower()
+        turn_count = turn_count + 1
 
-    
+        if turn_count < 3:
+            print("Are you sure you want the total to be revealed? Maybe a few more turns?")
+            final = input(print("Type 'yes' or 'no'"))
+            final = final.lower()
+            if final = "yes":
+                end_game = "reveal"
+            else:
+                end_game = ""
+
+    print("The final total is %s, over the course of 
