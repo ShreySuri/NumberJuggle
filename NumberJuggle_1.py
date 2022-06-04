@@ -11,6 +11,7 @@ if user_input == "1":
 
     max_num = 0.5
     while max_num % 1 != 0:
+        print("")
         max_num = input(print("Up to what number do you want the computer to pick? Please type an integer. "))
         max_num = float(max_num)
     max_num = int(max_num)
@@ -82,4 +83,28 @@ if user_input == "1":
     if guess == original_num:
         print("You got it! If you would like to be challenged more, increase the max number next time you play.")
     else:
-        print("Sorry, the original number was %s. You can lower the difficulty by decreasing the max number the next time you play.") 
+        print("Sorry, the original number was %s. You can lower the difficulty by decreasing the max number the next time you play.")
+
+elif user_input == "2":
+
+    turns = 0.5
+    while turns % 1 != 0:
+        print("")
+        turns = input(print("How many turns do you want to play up to? Please enter an integer. "))
+        turns = float(turns)
+    turns = int(turns)
+
+    add_max = 0.5
+    while add_max % 1 != 0:
+        print("")
+        add_max = input(print("What is the highest addend/subtrahend you are comfortable with? Please enter an integer. "))
+        add_max = float(add_max)
+    add_max = int(add_max)
+
+    mult_max = 0.5
+    while
+    
+    print("")
+    print("Think of any integer. The computer will tell you what operations to peform for %s turns." % turns)
+    print("")
+    for i in range
