@@ -110,9 +110,10 @@ elif user_input == "2":
     
     print("")
     print("Think of any integer. The computer will tell you what operations to peform for %s turns." % turns)
-    print("")
-    
-    for i in range (0, turns):
+
+
+    game_log = []   
+    for i in range (0, turns)
 
         operation = random.randint(1,3)
         if operation == 1:
@@ -124,8 +125,22 @@ elif user_input == "2":
             number = random.randint(1, add_max)
             index = 10 * number + 2
         else:
-            number = random.rand_int(1, mult_max)
+            operation = "Multiply by"
+            number = random.rand_int(2, mult_max)
             index = 10 * number + 3
 
-        print("%s %s. 
-        
+        game_log.append(index)
+            
+        confirmation = ""
+        while confirmation != "done":
+            print("")
+            confirmation = input(print("%s %s. Press 'done' to continue" % (operation, number)))
+
+    final = 0.5
+    while final % 1 != 0:
+        print("")
+        final = input(print("What is your final number? "))
+        final = float(final)
+    final = int(final)
+
+    game_log.reverse()
