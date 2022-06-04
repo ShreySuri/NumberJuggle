@@ -102,9 +102,30 @@ elif user_input == "2":
     add_max = int(add_max)
 
     mult_max = 0.5
-    while
+    while mult_max % 1 != 0:
+        print("")
+        mult_max = input(print("What is the highest multiplier you are comfortable with? Please enter an integer. "))
+        mult_max = float(mult_max)
+    mult_max = int(mault_max)
     
     print("")
     print("Think of any integer. The computer will tell you what operations to peform for %s turns." % turns)
     print("")
-    for i in range
+    
+    for i in range (0, turns):
+
+        operation = random.randint(1,3)
+        if operation == 1:
+            operation = "Add"
+            number = random.randint(1, add_max)
+            index = 10 * number + 1
+        elif operation == 2:
+            operation = "Subtract"
+            number = random.randint(1, add_max)
+            index = 10 * number + 2
+        else:
+            number = random.rand_int(1, mult_max)
+            index = 10 * number + 3
+
+        print("%s %s. 
+        
