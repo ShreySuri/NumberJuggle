@@ -106,14 +106,14 @@ elif user_input == "2":
         print("")
         mult_max = input(print("What is the highest multiplier you are comfortable with? Please enter an integer. "))
         mult_max = float(mult_max)
-    mult_max = int(mault_max)
+    mult_max = int(mult_max)
     
     print("")
     print("Think of any integer. The computer will tell you what operations to peform for %s turns." % turns)
-
+    time.sleep(7)
 
     game_log = []   
-    for i in range (0, turns)
+    for i in range (0, turns):
 
         operation = random.randint(1,3)
         if operation == 1:
@@ -126,7 +126,7 @@ elif user_input == "2":
             index = 10 * number + 2
         else:
             operation = "Multiply by"
-            number = random.rand_int(2, mult_max)
+            number = random.randint(2, mult_max)
             index = 10 * number + 3
 
         game_log.append(index)
@@ -144,3 +144,27 @@ elif user_input == "2":
     final = int(final)
 
     game_log.reverse()
+
+    for i in range (0, turns):
+        index = game_log[i]
+        operation = int(index % 10)
+        number = int((index - operation)/10)
+
+        if operation == 1:
+            final = final - number
+        elif operation == 2:
+            final = final + number
+        else:
+            final = final / number
+
+    answer = ""
+    while answer != "yes" and answer != "no":
+        print("")
+        answer = input(print("Is your number %s? " % final))
+        answer = answer.lower()
+
+    if answer == "yes":
+        print("Awesome!")
+    else:
+        print("Oops!")
+        
